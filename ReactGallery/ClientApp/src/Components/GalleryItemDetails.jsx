@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Modal from 'react-bootstrap/Modal'
+import { Modal } from './Modal';
+import { GalleryItem } from './GalleryItem';
 
 export class GalleryItemDetails extends Component {
     constructor(props) {
         super(props);
-
-        this.setModalShow = this.setModalShow.bind(this);
+        
+        this.onClose = this.onClose.bind(this);
     }
 
     componentDidMount() {
@@ -16,45 +17,30 @@ export class GalleryItemDetails extends Component {
         this.mounted = false;
     }
 
-    setModalShow() {
-
+    onClose(e) {
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
     }
 
     render() {
-        debugger
         let image = null;
-        if (this.props.imgSrc !== null) {
-            image = (<img className="imageCls" src={this.props.imgSrc} />);
+        if (this.props.selectedImage.url !== null) {
+            image = (<img id={"img_" + this.props.selectedImage.id} className="imageCls" src={this.props.selectedImage.url} />);
         }
-
-        var css = "mobileGraphicalTileButton ";
-        css = this.props.classes ? css + this.props.classes : css;
-        var styles = this.props.styles
-
+        let title = "Image No. " + this.props.selectedImage.id + " from album " + this.props.selectedImage.albumId;
         return (
-            <Modal
-                {...this.props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        Modal heading
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <h4>Centered Modal</h4>
-                    <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros.
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <button onClick={this.props.onHide}>Close</button>
-                </Modal.Footer>
-            </Modal>
+            <div >
+                <Modal title={title} onClose={this.onClose} show={this.props.isModalOpen}>
+                    <div id={"wrp_" + this.props.selectedImage.url.id} className="graphicalBtnWrapper">
+                        {image}
+                    </div>
+                    <div className="flex-container-base flex-direction-row" >
+                        <span>{this.props.selectedImage.title}</span>
+                    </div>
+                </Modal>
+            </div>
         );
+       
     };
 }

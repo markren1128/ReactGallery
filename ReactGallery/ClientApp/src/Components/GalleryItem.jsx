@@ -16,7 +16,7 @@ export class GalleryItem extends Component {
     render() {
         let image = null;
         if (this.props.imgSrc !== null) {
-            image = (<img className="imageCls" src={this.props.imgSrc} />);
+            image = (<img id={"img_" + this.props.id} className="imageCls" src={this.props.imgSrc} />);
         }
 
         var css = "mobileGraphicalTileButton ";
@@ -25,15 +25,15 @@ export class GalleryItem extends Component {
        
         return (
             < button
-                id = { this.props.id }
+                id = { "btn_" + this.props.id }
                 className = { css }
                 style = { styles }
                 value = { this.props.value }
                 onClick = { this.clickEventHandler }
                 >
-                <div className="graphicalBtnWrapper">
+                <div id={"wrp_" + this.props.id}  className="graphicalBtnWrapper">
                     {image}
-                    <div className="graphicalSpan"><span>{this.props.text}</span></div>
+                    <div id={"spn_" + this.props.id} className="graphicalSpan"><span>{this.props.text}</span></div>
                 </div>
             </button >
             

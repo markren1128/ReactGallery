@@ -1,0 +1,209 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.btn-margin {
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-bottom: 2em;
+}
+
+.flex-container-base {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 1 auto; /* IE WORKAROUND */
+    min-height: 1px; /* IE WORKAROUND */
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 1 auto; /* IE WORKAROUND */
+    min-height: 1px; /* IE WORKAROUND */
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-justifyContent-start {
+    justify-content: flex-start;
+}
+
+.flex-justifyContent-end {
+    justify-content: flex-end;
+}
+
+.flex-justifyContent-center {
+    justify-content: center;
+}
+
+.flex-justifyContent-spaceBetween {
+    justify-content: space-between;
+}
+
+.flex-justifyContent-spaceAround {
+    justify-content: space-around;
+}
+
+.flex-alignItems-start {
+    align-items: flex-start;
+}
+
+.flex-alignItems-end {
+    align-items: flex-end;
+}
+
+.flex-alignItems-center {
+    align-items: center;
+}
+
+.flex-alignItems-baseline {
+    align-items: baseline;
+}
+
+.flex-alignItems-stretch {
+    align-items: stretch;
+}
+
+.flex-alignSelf-stretch {
+    align-self: stretch;
+}
+
+.flex-alignSelf-center {
+    align-self: center;
+}
+
+.flex-alignSelf-start {
+    align-self: flex-start;
+}
+
+.flex-alignSelf-end {
+    align-self: flex-end;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+.flex-image-icon {
+    width: 2em;
+    margin: .25em;
+}
+
+.flex-header-icon {
+    width: 3em;
+    min-width: 3em;
+    margin: .25em;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.graphicalSpan {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.graphicalBtnWrapper {
+    display: flex;
+    height: 250px;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.imageCls {
+    object-fit: cover;
+    height: 70%;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+}
+
+.mobileGraphicalTileButton {
+    border-radius: 10px;
+    align-items: center;
+    line-height: 1.2em;
+    margin: 0;
+    width: 250px;
+    margin-top: 2em;
+    border-color: darkgrey;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+    .mobileGraphicalTileButton .img-responsive {
+        height: 65%;
+        margin: 0px auto;
+        margin-top: 1em;
+    }
+
+.toggle {
+    background-color: grey;
+    width: 60px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-active {
+    background-color: blue;
+    width: 60px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+input {
+    display: none;
+}
+
+.slider {
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 4px;
+}
+
+input:checked + .toggle {
+    background-color: green;
+}
+
+    input:checked + .toggle > .slider {
+        align-self: flex-end;
+    }

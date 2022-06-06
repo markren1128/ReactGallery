@@ -1,5 +1,6 @@
 # ReactGallery
-This Project fetch a collection of images from a specific url then display in Gallery mode
+This Project fetch a collection of images from a specific url then display in Gallery mode.
+Initial of 12 images will be loaded, then when you press the Load More button it will load the next 12 images until it reach the end of collections.
 
 Sample Screenshots
 ![image](https://user-images.githubusercontent.com/34426748/172088183-689f2282-7d1e-48c1-8eff-b3a75d13904c.png)
